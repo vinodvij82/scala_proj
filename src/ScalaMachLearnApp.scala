@@ -7,7 +7,7 @@ import org.apache.spark.mllib.classification.LogisticRegressionWithSGD
 import org.apache.spark.streaming.{Seconds, StreamingContext}
 
 /**
-  * Created by hduser on 27/3/16.
+  * Created by Vinod on 27/3/16.
   */
 object ScalaMachLearnApp{
   def main(args:Array[String]): Unit = {
@@ -28,6 +28,7 @@ object ScalaMachLearnApp{
 
     val trainingData = positiveExamples.union(negativeExamples)
 
+    //Below line is causing issue in execution.
     //trainingData.cache()
 
     val model = new LogisticRegressionWithSGD().run(trainingData)
