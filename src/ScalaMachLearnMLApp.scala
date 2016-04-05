@@ -3,6 +3,7 @@
   *  Author: Vinod Vijayan
   *  Date: 5 Apr 2016
   *
+  * Sample input files and output is shown below
 spam.txt:
 -------------- START COPY FROM BELOW LINE------------------------
 Dear sir, I am a Prince in a far kingdom you have not heard of.  I want to send you money via wire transfer so please ...
@@ -72,7 +73,7 @@ object ScalaMachLearnMLApp{
     val dfNorm = sqlContext.read.text("/home/hduser/IdeaProjects/files/ham.txt").withColumnRenamed("value","text")
 
     // Read Sample data from HDFS to predict each line is spam or not
-    val dfSamp = sqlContext.read.text("/home/hduser/IdeaProjects/files/sampleinput.txt").withColumnRenamed("value","text")
+    val dfSample = sqlContext.read.text("/home/hduser/IdeaProjects/files/sampleinput.txt").withColumnRenamed("value","text")
 
     //Filter empty rows with no text data
     val dfSpamFullLines = dfSpam.filter(sqlStrFiltFunc(dfSpam("text")))
@@ -111,7 +112,7 @@ object ScalaMachLearnMLApp{
     val model = pipeline.fit(dfTrainingData)
 
     // Make predictions on test documents.
-    model.transform(dfSamp)
+    model.transform(dfSample)
       .select("text", "probability", "prediction")
       .collect()
       .foreach { case Row(text: String, prob: Vector, prediction: Double) =>
