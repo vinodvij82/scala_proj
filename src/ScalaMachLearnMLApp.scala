@@ -1,5 +1,5 @@
 /**
-  *  Using spark mlib linear regression to predict spam
+  *  Using spark ML linear regression to predict spam
   *  Author: Vinod Vijayan
   *  Date: 5 Apr 2016
   *
