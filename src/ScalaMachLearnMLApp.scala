@@ -34,7 +34,7 @@ Output when run:
 (O M G GET cheap stuff by sending money to ...) --> prob=[0.10202581946958277,0.8979741805304173], prediction=1.0
 (Hi Dad, I have started learning Spark using Scala since the other ...) --> prob=[0.6280674046224966,0.37193259537750334], prediction=0.0
 
-Please Note: There is always a better way to do stuff.
+Please Note: There will always be a better way to do stuff.
   */
 package com
 
