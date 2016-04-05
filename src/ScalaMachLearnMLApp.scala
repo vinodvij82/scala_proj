@@ -53,7 +53,7 @@ object ScalaMachLearnMLApp{
   def main(args:Array[String]): Unit = {
 
     // Create the context with a 1 second batch size
-    val sparkConf        = new SparkConf().setAppName("ScalaStreamingApp").setMaster("local[*]")
+    val sparkConf        = new SparkConf().setAppName("SparkMLApp").setMaster("local[*]")
     val sc               = new SparkContext(sparkConf)
     val sqlContext       = new SQLContext(sc)
 
