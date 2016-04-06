@@ -75,7 +75,7 @@ object ScalaMachLearnMLApp{
     // Read Sample data from HDFS to predict each line is spam or not
     val dfSample = sqlContext.read.text("/home/hduser/IdeaProjects/files/sampleinput.txt").withColumnRenamed("value","text")
 
-    //Filter out the empty lines/rows in the files that have no data
+    //Filter out the empty lines/rows that have no data in the input files 
     val dfSpamFullLines = dfSpam.filter(sqlStrFiltFunc(dfSpam("text")))
     val dfNormFullLines = dfNorm.filter(sqlStrFiltFunc(dfNorm("text")))
 
